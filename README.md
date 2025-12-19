@@ -122,14 +122,6 @@ This tool is designed exclusively for:
 - Authorized pentesting
 - Computer security research
 
-**LEGAL WARNINGS**
-
-- DO NOT use without explicit authorization
-- DO NOT capture real credentials without consent
-- DO NOT intercept private communications
-- DO NOT use on public or third-party networks
-- Misuse can be ILLEGAL and result in penalties
-
 ## Stopping the Hotspot
 
 From web panel: Click "Stop Hotspot"
