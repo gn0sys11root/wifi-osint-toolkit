@@ -3,6 +3,7 @@
 ![WiFi Hotspot Control Panel](Screenshot_2025-12-17_06_32_14.png)
 
 Advanced tool for creating a WiFi hotspot with OSINT monitoring capabilities, DNS Spoofing, and educational captive portal. Designed for pentesting and security demonstrations.
+> **Español**: [version en español:](README.es.md)
 
 ## Main Features
 
