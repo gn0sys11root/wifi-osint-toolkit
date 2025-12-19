@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Portal Cautivo</title>
+    <style>
+        :root {
+            --bg-color: #f7f8fa;
+            --fb-color: #1877F2;
+            --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            /* Add padding to body to prevent content touching edges */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-color);
+            background-color: #fff;
+            /* Fallback white */
+            /* Fallback generic or nice texture */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Center vertically specifically for mobile viewport */
+            align-items: center;
+            overflow: hidden;
+            /* Prevent scrolling */
+        }
+
+        /* Overlay to darken background slightly for contrast */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(5px);
+            z-index: 0;
+            display: none;
+            /* Remove overlay if we want clean white like screenshot, or keep subtle */
+        }
+
+        .card {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 350px;
+            /* Slightly narrower for better mobile fit */
+            padding: 20px 10px;
+            /* Reduce padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* If we want full height look, we can adjust. 
+               For now, centered card or bottom sheet style. 
+               Let's go with a Centered Card style for cleanliness. */
+            margin: auto;
+        }
+
+        .wifi-logo {
+            width: 80px;
+            /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .logo-header {
+            width: 150px;
+            /* Adjust based on actual logo ratio */
+            max-height: 150px;
+            object-fit: contain;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+
+        .auth-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            /* Full width pill */
+            height: 60px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #fff;
+            padding: 0 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-icon-wrapper {
+            width: 36px;
+            height: 36px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .btn img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        /* Facebook Style */
+        .btn.facebook {
+            background-color: var(--fb-color);
+        }
+
+        /* Instagram Style */
+        .btn.instagram {
+            background: var(--insta-gradient);
+        }
+
+        .btn-text {
+            flex-grow: 1;
+            /* Center text if needed, or left align */
+            text-align: center;
+            padding-right: 36px;
+            /* Balance the icon spacing to center text visually */
+        }
+
+        .footer-text {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #555;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="card">
+        <!-- Wifi Logo -->
+        <img src="wifi.png" alt="Wifi" class="wifi-logo">
+
+        <div class="auth-buttons">
+            <!-- Facebook Button -->
+            <a href="facebook.html" class="btn facebook">
+                <div class="btn-icon-wrapper">
+                    <img src="Facebook_Logo_(2019).png" alt="F">
+                </div>
+                <span class="btn-text">Iniciar sesión con Facebook</span>
+            </a>
+
+            <!-- Instagram Button -->
+            <a href="instagram.html" class="btn instagram">
+                <div class="btn-icon-wrapper">
+                    <img src="iyazeqxfbpL.png" alt="I">
+                </div>
+                <span class="btn-text">Iniciar sesión con Instagram</span>
+            </a>
+        </div>
+
+        <div class="footer-text">
+            Conexión segura y gratuita
+        </div>
+    </div>
+
+
+</body>
+
+</html>

