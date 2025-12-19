@@ -1,4 +1,4 @@
-# Wifi-osint-toolkit - OSINT + DNS Spoofing + Captive Portal
+# Wifi-osint-toolkit - (OSINT and Captive Portal)
 
 ![WiFi Hotspot Control Panel](Screenshot_2025-12-17_06_32_14.png)
 
